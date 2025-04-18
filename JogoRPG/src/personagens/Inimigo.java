@@ -21,6 +21,11 @@ public class Inimigo {
         return personagem;
     }
 
+    public String getDescricao() {
+        return "Inimigo: " + personagem.nome + " | Vida: " + personagem.vida + ", Mana: " + personagem.mana + ", Ataque: " + personagem.ataque + ", Defesa: " + personagem.defesa + ", Estratégia: " + estrategia;
+    }
+
+
     public void realizarAcao(Personagem alvo) {
         switch (estrategia) {
             case "agressivo":
