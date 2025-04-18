@@ -35,7 +35,8 @@ public class App {
             System.out.println("\nSeu status: Vida: " + jogador.vida + ", Mana: " + jogador.mana);
             System.out.println("Inimigo: Vida: " + inimigo.getPersonagem().vida);
             System.out.println("\nEscolha sua ação:");
-            System.out.println("1 - Atacar\n2 - Usar Habilidade 1\n3 - Usar Habilidade 2\n4 - Defender");
+            System.out.println("1 - Atacar\n2 - Usar Habilidade 1\n3 - Usar Habilidade 2\n4 - Defender\n5 - Mostrar Habilidades\n");
+            System.out.print("Digite o número da ação: ");
 
             int acao = scanner.nextInt();
 
@@ -53,6 +54,9 @@ public class App {
                 case 4:
                     jogador.defender();
                     break;
+                case 5:
+                    jogador.mostrarHabilidades();
+                    continue;    
                 default:
                     System.out.println("Ação inválida!");
             }
