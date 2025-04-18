@@ -24,4 +24,10 @@ public class Elfa extends Personagem {
             System.out.println("Mana insuficiente ou opção inválida.");
         }
     }
+
+@Override
+    public void mostrarHabilidades() {
+        System.out.println("1 - Flecha Venenosa (15 de mana): Ataque com veneno");
+        System.out.println("2 - Cura Natural (20 de mana): Recupera pontos de vida");
+    }
 }

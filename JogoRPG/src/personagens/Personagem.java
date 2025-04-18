@@ -27,4 +27,7 @@ public abstract class Personagem {
         this.defesa += 3;
         System.out.println(nome + " está se defendendo, defesa aumentada temporariamente!");
     }
+
+
+public abstract void mostrarHabilidades();
 }

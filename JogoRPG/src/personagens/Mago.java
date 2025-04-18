@@ -23,4 +23,10 @@ public class Mago extends Personagem {
             System.out.println("Mana insuficiente ou opção inválida.");
         }
     }
+
+@Override
+public void mostrarHabilidades() {
+    System.out.println("1 - Bola de Fogo (20 de mana): Ataque mágico poderoso");
+    System.out.println("2 - Escudo Arcano (15 de mana): Aumenta a defesa temporariamente");
+}
 }
