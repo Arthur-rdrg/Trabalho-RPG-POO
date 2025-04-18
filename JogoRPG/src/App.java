@@ -13,8 +13,13 @@ public class App {
 
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("\n=== O Confronto pelo Artefato ===");
-            System.out.println("Há séculos, um artefato mágico capaz de controlar os elementos da natureza está escondido. Agora, um Mago e uma Elfa se enfrentam por seu poder.\n");
+            System.out.println("Há muitos séculos, escondido nas profundezas da Floresta Eterna, foi criado um artefato capaz de controlar os quatro elementos da natureza: fogo, água, terra e ar.");
+            System.out.println("Esse objeto místico, conhecido como Coração dos Elementos, foi selado por antigos guardiões, não apenas por seu imenso poder, mas por carregar uma maldição esquecida: aquele que tentar dominá-lo corre o risco de perder sua alma.\n");
+            System.out.println("Agora, o selo está prestes a se romper, e duas figuras poderosas surgem para disputar sua posse: Elfa Sombria, a elfa guardiã da floresta, e Mago Negro, o mago que dedicou sua vida aos mistérios arcanos.\n");
+            System.out.println("Ambos acreditam ser os únicos dignos de controlar o Coração dos Elementos. Aeryn deseja selá-lo novamente e proteger o equilíbrio da natureza. Thalion busca despertar seu verdadeiro potencial e conquistar a sabedoria absoluta para moldar o mundo com as próprias mãos.\n");
+            System.out.println("Mas nenhum deles sabe o que realmente aguarda aquele que tocar o artefato.\nA batalha é inevitável. Escolha seu lado. O destino do mundo – e da sua alma – está em jogo.\n");
 
+ 
             System.out.print("Escolha seu personagem (1 - Mago | 2 - Elfa): ");
             int escolha = scanner.nextInt();
             scanner.nextLine();
@@ -23,10 +28,10 @@ public class App {
 
         if (escolha == 1) {
             jogador = new Mago(nome);
-            inimigo = new Inimigo(new Elfa("Elfa Sombra"));
+            inimigo = new Inimigo(new Elfa("Elfa Sombria"));
         } else {
             jogador = new Elfa(nome);
-            inimigo = new Inimigo(new Mago("Mago Sombrio"));
+            inimigo = new Inimigo(new Mago("Mago Negro"));
         }
 
         Random rand = new Random();
