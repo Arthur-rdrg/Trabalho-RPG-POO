@@ -1,8 +1,11 @@
 import java.util.Scanner;
 import personagens.Personagem;
-import personagens.Inimigo; 
+import personagens.Inimigo;
+import personagens.Lobo;
 import personagens.Mago;
 import personagens.Elfa;
+import personagens.Goblin;
+
 import java.util.Random;
 
 public class App {
@@ -34,7 +37,30 @@ public class App {
             inimigo = new Inimigo(new Mago("Mago Negro"));
         }
 
-        Random rand = new Random();
+                // Inimigos intermediários (Goblin e Lobo)
+                Inimigo goblin = new Inimigo(new Goblin("Goblin assassino"));
+                Inimigo lobo = new Inimigo(new Lobo("Lobo selvagem"));
+        
+                // Início da jornada
+                System.out.println("\nVocê começa sua jornada enfrentando inimigos menores para ganhar força...\n");
+        
+                // Combate contra Goblin
+                if (!combater(jogador, goblin, "Goblin")) return;
+        
+                // Combate contra Lobo
+                if (!combater(jogador, lobo, "Lobo")) return;
+        
+                // Combate final com o inimigo escolhido
+                combater(jogador, inimigo, "Chefe Final");
+            }
+        }
+
+        // Método que gerencia o combate entre o jogador e um inimigo
+        private static boolean combater(Personagem jogador, Inimigo inimigo, String tipoDeInimigo) {
+            Scanner scanner = new Scanner(System.in);
+            Random rand = new Random();
+
+        System.out.println("\n--- Começo do combate contra " + inimigo.getPersonagem().nome + " ---");
 
         while (jogador.estaVivo() && inimigo.getPersonagem().estaVivo()) {
             System.out.println("\nSeu status: Vida: " + jogador.vida + ", Mana: " + jogador.mana);
@@ -64,18 +90,41 @@ public class App {
                     continue;    
                 default:
                     System.out.println("Ação inválida!");
+                    continue; // Pula para o próximo loop
             }
 
-            if (inimigo.getPersonagem().estaVivo()) {
-                inimigo.realizarAcao(jogador);
+            // Verifica se o inimigo foi derrotado
+            if (!inimigo.getPersonagem().estaVivo()) {
+                if (tipoDeInimigo.equals("Goblin")) {
+                    System.out.println("\nVocê derrotou o Goblin! A floresta ficou mais segura, mas sua jornada ainda está longe de terminar.");
+                } else if (tipoDeInimigo.equals("Lobo")) {
+                    System.out.println("\nVocê derrotou o Lobo Selvagem! Um perigo a menos na floresta, mas o maior desafio ainda está por vir.");
+                } else {
+                    System.out.println("\nParabéns, " + jogador.nome + "! Você venceu o " + inimigo.getPersonagem().nome + " e conquistou o artefato ancestral!");
                 }
+                jogador.subirDeNivel(); // Aumenta o nível após cada combate
+                System.out.println("Você subiu para o nível " + jogador.nivel + "!");
+                return true; // Indica vitória
+            }
+
+            // Turno do inimigo
+            if (inimigo.getPersonagem().estaVivo()) {
+                int danoInimigo = inimigo.getPersonagem().ataque - jogador.defesa + rand.nextInt(6);
+                danoInimigo = Math.max(0, danoInimigo);
+                jogador.vida -= danoInimigo;
+                System.out.println(inimigo.getPersonagem().nome + " atacou causando " + danoInimigo + " de dano!");
             }
         }
 
-        if (jogador.estaVivo()) {
-            System.out.println("\nParabéns, " + jogador.nome + "! Você venceu e conquistou o artefato ancestral!");
-        } else {
-            System.out.println("\nVocê foi derrotado. O artefato está perdido... por enquanto.");
+        // Se o jogador não estiver mais vivo, exibe a mensagem de derrota
+        if (!jogador.estaVivo()) {
+            System.out.println("\nVocê foi derrotado por " + inimigo.getPersonagem().nome + ". O jogo acabou.");
+            return false; // Indica derrota
         }
+        
+        return true; // Indica vitória
+    
     }
 }
+
+
