@@ -1,18 +1,89 @@
-## Getting Started
+# O Confronto pelo Artefato - RPG de Terminal em Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📖 História
 
-## Folder Structure
+Há muitos séculos, escondido nas profundezas da Floresta Eterna, foi criado um artefato capaz de controlar os quatro elementos da natureza: fogo, água, terra e ar. Esse objeto místico, conhecido como **Coração dos Elementos**, foi selado por antigos guardiões, não apenas por seu imenso poder, mas por carregar uma maldição esquecida: aquele que tentar dominá-lo corre o risco de perder sua alma.
 
-The workspace contains two folders by default, where:
+Agora, o selo está prestes a se romper, e duas figuras poderosas surgem para disputar sua posse: **Aeryn**, a elfa guardiã da floresta, e **Thalion**, o mago que dedicou sua vida aos mistérios arcanos.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Você deve escolher um dos dois para representar e enfrentar o outro em uma jornada cheia de perigos.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 🎮 Jogabilidade
 
-## Dependency Management
+O jogo é baseado em turnos e rodado diretamente no terminal. O jogador enfrentará inimigos para ganhar experiência e evoluir até chegar ao chefe final.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Ações Disponíveis:
+- **Atacar**: Causa dano básico ao inimigo.
+- **Usar Habilidade 1 ou 2**: Consome mana para causar efeitos especiais.
+- **Defender**: Aumenta a defesa no próximo turno.
+- **Ver Habilidades**: Mostra informações sobre as habilidades (não consome turno).
+
+---
+
+## 🧙 Personagens
+
+### Jogador (escolha no início do jogo):
+#### Mago
+- Vida: 100
+- Mana: 80
+- Habilidades:
+  - **Bola de Fogo**: Ataque mágico poderoso.
+  - **Escudo Arcano**: Aumenta a defesa temporariamente.
+
+#### Elfa
+- Vida: 120
+- Mana: 60
+- Habilidades:
+  - **Flecha Venenosa**: Causa dano ao longo do tempo.
+  - **Cura Natural**: Restaura pontos de vida.
+
+---
+
+## 🐺 Inimigos
+
+### Inimigos Intermediários:
+- **Goblin**: Fraco, mas veloz.
+- **Lobo Selvagem**: Resistente e agressivo.
+
+### Chefe Final:
+- O personagem que você **não escolheu** como jogador será o **inimigo final** da história.
+
+---
+
+### 🌱 Extras
+Sistema de progressão por nível.
+
+Narração interativa com narrativa envolvente.
+
+Personagens com estilos de jogo distintos.
+
+Combate com aleatoriedade de dano usando Random. 
+
+---
+
+## ⚙️ Requisitos
+
+- Java 8 ou superior
+- Terminal para executar o programa
+
+---
+
+## ▶️ Como Jogar
+
+1. Compile os arquivos Java:
+   ```bash
+   javac *.java
+
+
+
+
+### Créditos 
+
+Arthur Rodrigues Arruda
+Bruna Micaelly Gonçalves Aguiar
+Bruno Nathan Gomes dos Santos
+Anna Luiza Guimaraes gontijo
+Ana Luíza de Souza Fernandes
+Pedro Henrique Monteiro Serpa
