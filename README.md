@@ -83,7 +83,7 @@ Combate com aleatoriedade de dano usando Random.
 
 Arthur Rodrigues Arruda
 Bruna Micaelly Gonçalves Aguiar
-Bruno Nathan Gomes dos Santos
+Bruno Natã Gomes dos Santos
 Anna Luiza Guimaraes gontijo
 Ana Luíza de Souza Fernandes
 Pedro Henrique Monteiro Serpa
